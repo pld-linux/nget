@@ -6,7 +6,7 @@ Version:	0.18.1
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
-Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}%+uulib.tar.gz
+Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}+uulib.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
