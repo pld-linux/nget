@@ -2,7 +2,7 @@ Summary:	A utility for retrieving files using the NNTP
 Summary(fr):	Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
 Summary(pl):	Wsadowy klient NNTP
 Name:		nget
-Version:	0.18.1
+Version:	0.18.2
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
