@@ -6,12 +6,13 @@ Version:	0.18.1
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
-Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}+uulib.tar.gz
+Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	popt-devel
+BuildRequires:	uudeview-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,17 +35,16 @@ wieloczê¶ciowe wiadomo¶ci.
 %build
 aclocal
 autoconf
-CXXFLAGS="%{rpmcflags}" export CXXFLAGS
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf FAQ README TODO .ngetrc
+gzip -9nf Changelog FAQ README TODO .ngetrc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -53,5 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_bindir}/*
-
 %{_mandir}/man?/*
