@@ -34,7 +34,7 @@ wieloczê¶ciowe wiadomo¶ci.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 %configure
 %{__make}
 
