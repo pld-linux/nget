@@ -1,6 +1,6 @@
---- nget-0.18.2/Makefile.in.orig	Sat May 18 00:33:56 2002
-+++ nget-0.18.2/Makefile.in	Wed May 22 20:02:49 2002
-@@ -13,12 +13,12 @@
+--- nget-0.23/Makefile.in.orig	Mon Sep  9 03:04:21 2002
++++ nget-0.23/Makefile.in	Fri Apr  4 20:52:47 2003
+@@ -17,7 +17,7 @@
  mandir=@mandir@
  install=@INSTALL@
  install_data=${install} -m 0644
@@ -8,26 +8,29 @@
 +install_bin=${install} -m 0755
  install_dir=${install} -d
  
- all: .autostuff nget ngetlite
+ NGET=nget$(EXEEXT)
+@@ -25,7 +25,7 @@
+ 
+ all: .autostuff $(NGET) $(NGETLITE)
  
 -INSTALLDIRS=$(bindir) $(mandir)/man1
 +INSTALLDIRS=$(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1
+ W32DISTFILES=COPYING Changelog FAQ README.win32 nget.txt ngetlite.txt _ngetrc $(NGET) $(NGETLITE)
  
- OBJS=nget.o prot_nntp.o sockpool.o sockstuff.o cache.o dupe_file.o file.o termstuff.o misc.o strtoker.o strreps.o myregex.o datfile.o etree.o nrange.o log.o server.o @UULIB@
- nget: $(OBJS) .depend 
-@@ -48,12 +48,12 @@
+ OBJS=nget.o prot_nntp.o texthandler.o sockpool.o sockstuff.o cache.o grouplist.o dupe_file.o file.o file_gz.o termstuff.o path.o misc.o strtoker.o strreps.o myregex.o datfile.o argparser.o etree.o nrange.o log.o server.o @UULIB@
+@@ -50,12 +50,12 @@
  	$(install_dir) $@
  
- install_nget: $(INSTALLDIRS) nget
--	$(install_bin) nget $(bindir)
+ install_nget: $(INSTALLDIRS) $(NGET)
+-	$(install_bin) $(NGET) $(bindir)
 -	$(install_data) nget.1 $(mandir)/man1
-+	$(install_bin) nget $(DESTDIR)$(bindir)
++	$(install_bin) $(NGET) $(DESTDIR)$(bindir)
 +	$(install_data) nget.1 $(DESTDIR)$(mandir)/man1
  
- install_ngetlite: $(INSTALLDIRS) ngetlite
--	$(install_bin) ngetlite $(bindir)
+ install_ngetlite: $(INSTALLDIRS) $(NGETLITE)
+-	$(install_bin) $(NGETLITE) $(bindir)
 -	$(install_data) ngetlite.1 $(mandir)/man1
-+	$(install_bin) ngetlite $(DESTDIR)$(bindir)
++	$(install_bin) $(NGETLITE) $(DESTDIR)$(bindir)
 +	$(install_data) ngetlite.1 $(DESTDIR)$(mandir)/man1
  
  install: install_nget install_ngetlite

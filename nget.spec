@@ -2,7 +2,7 @@ Summary:	A utility for retrieving files using the NNTP
 Summary(fr):	Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
 Summary(pl):	Wsadowy klient NNTP
 Name:		nget
-Version:	0.18.2
+Version:	0.23
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
@@ -17,8 +17,6 @@ BuildRequires:	popt-devel
 BuildRequires:	uudeview-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_sysconfdir		/etc
 
 %description
 nget retrieves messages matching a regular expression, and decodes any
@@ -37,7 +35,6 @@ wieloczê¶ciowe wiadomo¶ci.
 %build
 %{__aclocal}
 %{__autoconf}
-CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure
 %{__make}
 
