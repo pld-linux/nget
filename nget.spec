@@ -6,8 +6,10 @@ Version:	0.18.2
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
+#Source0Download:	http://www.dakotacom.net/~donut/programs/nget.html
 Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
+URL:		http://www.dakotacom.net/~donut/programs/nget.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
