@@ -3,7 +3,7 @@ Summary(fr):	Un utilitaire pour recuperer des fichiers en utilisant les protocol
 Summary(pl):	Wsadowy klient NNTP
 Name:		nget
 Version:	0.27
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Utilities
 #Source0Download:	http://www.dakotacom.net/~donut/programs/nget.html
