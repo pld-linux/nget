@@ -1,3 +1,6 @@
+# 
+# --with uulib
+#
 Summary:	A utility for retrieving files using the NNTP
 Summary(fr):	Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
 Summary(pl):	Wsadowy klient NNTP 
@@ -8,11 +11,11 @@ License:	GPL
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
 Group(pl):	Sieciowe/Narzêdzia
-Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}.tar.gz
+Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}%{?_with_uulib:+uulib}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	kdesupport-uulib-devel
+%{!?_with_uulib:BuildRequires:	kdesupport-uulib-devel}
 BuildRequires:	libstdc++-devel
 BuildRequires:	popt-devel
 BuildRequires:	zlib-devel
