@@ -6,21 +6,29 @@ Version:	0.14
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
+Group(de):	Netzwerkwesen/Werkzeuge
 Group(pl):	Sieciowe/Narzêdzia
 Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	kdesupport-uulib-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	popt-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	_sysconfdir	/etc
+%define		_sysconfdir		/etc
 
 %description
-nget retrieves messages matching a regular expression, and decodes any files
-contained  within.   Multipart  messages are automatically pieced together.
+nget retrieves messages matching a regular expression, and decodes any
+files contained within. Multipart messages are automatically pieced
+together.
 
 %description -l pl
-nget odczytuje wiadomo¶ci z serwera NNTP pasuj±ce do wyra¿enia regularnego i
-dekoduje wszystkie pasuj±ce pliki. S± tak¿e obs³ugiwane wieloczê¶ciowe
-wiadomo¶ci.
+nget odczytuje wiadomo¶ci z serwera NNTP pasuj±ce do wyra¿enia
+regularnego i dekoduje wszystkie pasuj±ce pliki. S± tak¿e obs³ugiwane
+wieloczê¶ciowe wiadomo¶ci.
 
 %prep
 %setup -q
@@ -29,14 +37,15 @@ wiadomo¶ci.
 %build
 aclocal
 autoconf
+CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
 %configure 
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
 
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf FAQ README TODO .ngetrc
 
