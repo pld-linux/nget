@@ -2,17 +2,15 @@ Summary:	A utility for retrieving files using the NNTP
 Summary(fr):	Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
 Summary(pl):	Wsadowy klient NNTP
 Name:		nget
-Version:	0.24.1
+Version:	0.25
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
 #Source0Download:	http://www.dakotacom.net/~donut/programs/nget.html
 Source0:	http://www.dakotacom.net/~donut/programs/nget/%{name}-%{version}.tar.gz
-# Source0-md5:	98754b59fb1372b51671d07ad5f238ac
+# Source0-md5:	2e3a6a7bdddc9b46733050a6e577e7d0
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.dakotacom.net/~donut/programs/nget.html
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	popt-devel
 BuildRequires:	uudeview-devel
@@ -34,8 +32,6 @@ wieloczê¶ciowe wiadomo¶ci.
 %patch0 -p1
 
 %build
-%{__aclocal}
-%{__autoconf}
 %configure
 %{__make}
 
