@@ -1,6 +1,6 @@
---- nget-0.23/Makefile.in.orig	Mon Sep  9 03:04:21 2002
-+++ nget-0.23/Makefile.in	Fri Apr  4 20:52:47 2003
-@@ -17,7 +17,7 @@
+--- nget-0.27.1/Makefile.in.orig	2004-12-21 22:45:04.000000000 +0100
++++ nget-0.27.1/Makefile.in	2004-12-21 22:47:55.000000000 +0100
+@@ -19,7 +19,7 @@
  mandir=@mandir@
  install=@INSTALL@
  install_data=${install} -m 0644
@@ -9,16 +9,16 @@
  install_dir=${install} -d
  
  NGET=nget$(EXEEXT)
-@@ -25,7 +25,7 @@
+@@ -27,7 +27,7 @@
  
  all: .autostuff $(NGET) $(NGETLITE)
  
 -INSTALLDIRS=$(bindir) $(mandir)/man1
 +INSTALLDIRS=$(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1
- W32DISTFILES=COPYING Changelog FAQ README.win32 nget.txt ngetlite.txt _ngetrc $(NGET) $(NGETLITE)
- 
- OBJS=nget.o prot_nntp.o texthandler.o sockpool.o sockstuff.o cache.o grouplist.o dupe_file.o file.o file_gz.o termstuff.o path.o misc.o strtoker.o strreps.o myregex.o datfile.o argparser.o etree.o nrange.o log.o server.o @UULIB@
-@@ -50,12 +50,12 @@
+ W32DISTTXTFILES=COPYING Changelog FAQ README.win32 nget.txt ngetlite.txt _ngetrc
+ W32DISTBINFILES=$(NGET) $(NGETLITE)
+ W32DISTFILES=$(W32DISTTXTFILES) $(W32DISTBINFILES)
+@@ -56,12 +56,12 @@
  	$(install_dir) $@
  
  install_nget: $(INSTALLDIRS) $(NGET)
