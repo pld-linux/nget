@@ -44,13 +44,11 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf Changelog FAQ README TODO .ngetrc
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc Changelog FAQ README TODO .ngetrc
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man?/*
