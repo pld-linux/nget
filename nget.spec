@@ -1,9 +1,9 @@
-# 
+#
 # --with uulib
 #
 Summary:	A utility for retrieving files using the NNTP
 Summary(fr):	Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
-Summary(pl):	Wsadowy klient NNTP 
+Summary(pl):	Wsadowy klient NNTP
 Name:		nget
 Version:	0.14
 Release:	1
@@ -39,7 +39,7 @@ wieloczê¶ciowe wiadomo¶ci.
 aclocal
 autoconf
 CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
-%configure 
+%configure
 %{__make}
 
 %install
