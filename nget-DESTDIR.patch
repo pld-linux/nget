@@ -1,18 +1,19 @@
-diff -ur nget-0.14.orig/Makefile.in nget-0.14/Makefile.in
---- nget-0.14.orig/Makefile.in	Fri Aug  3 03:36:40 2001
-+++ nget-0.14/Makefile.in	Mon Aug  6 22:52:07 2001
-@@ -39,11 +39,11 @@
+--- nget-0.18.1/Makefile.in	Sat May 11 14:20:43 2002
++++ nget-0.18.1/Makefile.in.org	Sat May 11 14:23:18 2002
+@@ -40,13 +40,11 @@
  	$(CXX) $(CXXFLAGS) -MM *.cc > .depend
  
  install_nget: nget
--	$(install) -s -o root -g bin -m 0755 nget $(bindir)
--	$(install) -o root -g bin -m 0644 nget.1 $(mandir)/man1
+-	$(install) -s -m 0755 nget $(bindir)
+-	$(install) -m 0644 nget.1 $(mandir)/man1
 +	$(install) nget $(DESTDIR)$(bindir)
 +	$(install) nget.1 $(DESTDIR)$(mandir)/man1
  
  install_ngetlite: ngetlite
--	$(install) -s -o root -g bin -m 0755 ngetlite $(bindir)
+-	$(install) -s -m 0755 ngetlite $(bindir)
+-	$(install) -m 0644 ngetlite.1 $(mandir)/man1
+-
 +	$(install) ngetlite $(DESTDIR)$(bindir)
- 
  install: install_nget install_ngetlite
  
+ nget.txt ngetlite.txt: %.txt: %.1
