@@ -1,19 +1,15 @@
-#
-# --with uulib
-#
 Summary:	A utility for retrieving files using the NNTP
 Summary(fr):	Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
 Summary(pl):	Wsadowy klient NNTP
 Name:		nget
-Version:	0.14
+Version:	0.18.1
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
-Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}%{?_with_uulib:+uulib}.tar.gz
+Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}%+uulib.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
-%{!?_with_uulib:BuildRequires:	kdesupport-uulib-devel}
 BuildRequires:	libstdc++-devel
 BuildRequires:	popt-devel
 BuildRequires:	zlib-devel
@@ -38,7 +34,7 @@ wieloczê¶ciowe wiadomo¶ci.
 %build
 aclocal
 autoconf
-CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
+CXXFLAGS="%{rpmcflags}" export CXXFLAGS
 %configure
 %{__make}
 
