@@ -7,8 +7,8 @@ Release:	1
 License:	GPL
 Group:		Networking/Utilities
 #Source0Download:	http://www.dakotacom.net/~donut/programs/nget.html
-Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}.tar.gz
-# Source0-md5:	bc3469e708e20eb9351b79144ae83081
+Source0:	http://www.dakotacom.net/~donut/programs/nget/%{name}-%{version}.tar.gz
+# Source0-md5:	c972946c15fe6e515742378ffdeed586
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.dakotacom.net/~donut/programs/nget.html
 BuildRequires:	autoconf
