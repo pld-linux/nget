@@ -10,7 +10,9 @@ Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
+Group(es):	Red/Utilitarios
 Group(pl):	Sieciowe/Narzêdzia
+Group(pt_BR):	Rede/Utilitários
 Source0:	http://www.azstarnet.com/~donut/programs/nget/%{name}-%{version}%{?_with_uulib:+uulib}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
