@@ -33,7 +33,7 @@ wieloczê¶ciowe wiadomo¶ci.
 %patch0 -p1
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 %configure
