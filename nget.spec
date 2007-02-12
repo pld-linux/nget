@@ -1,6 +1,6 @@
 Summary:	A utility for retrieving files using the NNTP
-Summary(fr):	Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
-Summary(pl):	Wsadowy klient NNTP
+Summary(fr.UTF-8):   Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
+Summary(pl.UTF-8):   Wsadowy klient NNTP
 Name:		nget
 Version:	0.27.1
 Release:	1
@@ -22,10 +22,10 @@ nget retrieves messages matching a regular expression, and decodes any
 files contained within. Multipart messages are automatically pieced
 together.
 
-%description -l pl
-nget odczytuje wiadomo¶ci z serwera NNTP pasuj±ce do wyra¿enia
-regularnego i dekoduje wszystkie pasuj±ce pliki. S± tak¿e obs³ugiwane
-wieloczê¶ciowe wiadomo¶ci.
+%description -l pl.UTF-8
+nget odczytuje wiadomoÅ›ci z serwera NNTP pasujÄ…ce do wyraÅ¼enia
+regularnego i dekoduje wszystkie pasujÄ…ce pliki. SÄ… takÅ¼e obsÅ‚ugiwane
+wieloczÄ™Å›ciowe wiadomoÅ›ci.
 
 %prep
 %setup -q
