@@ -1,6 +1,6 @@
 Summary:	A utility for retrieving files using the NNTP
-Summary(fr.UTF-8):   Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
-Summary(pl.UTF-8):   Wsadowy klient NNTP
+Summary(fr.UTF-8):	Un utilitaire pour recuperer des fichiers en utilisant les protocoles NNTP
+Summary(pl.UTF-8):	Wsadowy klient NNTP
 Name:		nget
 Version:	0.27.1
 Release:	1
